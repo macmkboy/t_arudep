@@ -10,18 +10,18 @@ jobs:
     timeout-minutes: 9999
     
     steps:
-      - name: Download
+      - name: Download ngrok
         run: Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -OutFile ngrok.zip
       
-      - name: Extract
+      - name: Extract ngrok
         run: Expand-Archive ngrok.zip
       
-      - name: Auth
+      - name: Auth ngrok
         run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
         env:
           NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
       
-      - name: Downloading & Installing Essentials
+      - name: run windows 10 controll by hai1723
         run: |
           Invoke-WebRequest -Uri "https://raw.githubusercontent.com/hai723/RDP-windows/main/file/run.bat" -OutFile "run.bat"
           cmd /c run.bat
