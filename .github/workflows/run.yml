@@ -19,7 +19,7 @@ jobs:
       - name: Auth ngrok
         run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
         env:
-          NGROK_AUTH_TOKEN: ${{ 1cuGOPqd6uKEbca6kcydYsEbDDg_3fUmQCggopu9QpgsQ9md5 }}
+          NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
       
       - name: run windows 10 controll by hai1723
         run: |
